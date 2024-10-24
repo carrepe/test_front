@@ -31,6 +31,8 @@ const fetchPost = async (postId) => {
 };
 
 const updatePost = async (postId, data) => {
+	console.log("----", "수정시작");
+
 	const response = await fetch(`${API_URL}/posts/editPost/${postId}`, {
 		method: "PUT",
 		body: data,
