@@ -9,7 +9,7 @@ export default function UserPosts({ posts }) {
 				<li key={post._id}>
 					<Link to={`/detail/${post._id}`}>
 						<div className={style.img}>
-							<img src={`${API_URL}${post.cover}`} alt="" />
+							<img src={`${API_URL}/${post.cover}`} alt="" />
 						</div>
 						<div className={style.info}>
 							<span>댓글: {post.commentCount}</span>

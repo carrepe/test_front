@@ -23,7 +23,7 @@ const useForm = (initialState) => {
 };
 
 const fetchPost = async (postId) => {
-	const response = await fetch(`${API_URL}posts/editpage/${postId}`);
+	const response = await fetch(`${API_URL}/posts/editpage/${postId}`);
 	if (!response.ok) {
 		throw new Error("글을 불러오는데 실패했습니다.");
 	}
@@ -31,7 +31,7 @@ const fetchPost = async (postId) => {
 };
 
 const updatePost = async (postId, data) => {
-	const response = await fetch(`${API_URL}posts/editPost/${postId}`, {
+	const response = await fetch(`${API_URL}/posts/editPost/${postId}`, {
 		method: "PUT",
 		body: data,
 		credentials: "include",

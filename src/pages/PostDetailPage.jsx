@@ -48,12 +48,12 @@ export default function PostDetailPage() {
 		data: postInfo,
 		loading,
 		error,
-	} = useFetch(`${API_URL}posts/postDetail/${postId}`);
+	} = useFetch(`${API_URL}/posts/postDetail/${postId}`);
 
 	const deletePost = useCallback(async () => {
 		try {
 			const response = await fetch(
-				`${API_URL}posts/deletePost/${postId}`,
+				`${API_URL}/posts/deletePost/${postId}`,
 				{
 					method: "DELETE",
 				}

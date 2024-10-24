@@ -17,7 +17,7 @@ export default function MainPage() {
 	useEffect(() => {
 		const getPostList = async () => {
 			try {
-				const response = await fetch(`${API_URL}posts/postList`);
+				const response = await fetch(`${API_URL}/posts/postList`);
 				if (!response.ok) {
 					throw new Error("백엔드통신오류");
 				}

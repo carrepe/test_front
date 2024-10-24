@@ -25,7 +25,7 @@ const useForm = (initialState) => {
 };
 
 const fetchUserInfo = async (userName) => {
-	const response = await fetch(`${API_URL}users/${userName}`);
+	const response = await fetch(`${API_URL}/users/${userName}`);
 	if (!response.ok) {
 		throw new Error("Failed to fetch user info");
 	}
@@ -33,7 +33,7 @@ const fetchUserInfo = async (userName) => {
 };
 
 const updateUserInfo = async (userName, formData) => {
-	const response = await fetch(`${API_URL}users/${userName}`, {
+	const response = await fetch(`${API_URL}/users/${userName}`, {
 		method: "PUT",
 		body: formData,
 		credentials: "include",
@@ -67,7 +67,7 @@ export default function EditUserPage() {
 				try {
 					const data = await fetchUserInfo(userName);
 					if (data.userImage) {
-						setPreviewImage(`${API_URL}uploads/${data.userImage}`);
+						setPreviewImage(`${API_URL}/uploads/${data.userImage}`);
 					}
 				} catch (error) {
 					console.error("Error fetching user info:", error);
