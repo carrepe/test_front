@@ -21,6 +21,8 @@ const useAuth = () => {
 			});
 			if (response.ok) {
 				const userInfo = await response.json();
+				console.log("userInfo:", userInfo);
+
 				dispatch(setUserAllInfo(userInfo));
 			}
 		} catch (error) {
