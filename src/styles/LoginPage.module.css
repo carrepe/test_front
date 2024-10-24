@@ -1,0 +1,43 @@
+.LoginPage h2,
+.RegisterPage h2 {
+	text-align: center;
+	padding: 2rem 0;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.LoginPage input,
+.RegisterPage input,
+.LoginPage button,
+.RegisterPage button {
+	width: 60%;
+	display: block;
+	margin: 0.5rem auto;
+	padding: 1rem;
+	border: 1px solid #999;
+	border-radius: 0.5rem;
+	outline: none;
+}
+.LoginPage input:focus,
+.RegisterPage input:focus {
+	background-color: #eaeaea;
+}
+.LoginPage button,
+.RegisterPage button {
+	background-color: #666;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+.RegisterPage button {
+	background-color: dodgerblue;
+}
+
+/* 반응형 변경사항 */
+@media screen and (max-width: 600px) {
+	.LoginPage input,
+	.RegisterPage input,
+	.LoginPage button,
+	.RegisterPage button {
+		width: 100%;
+	}
+}

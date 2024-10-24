@@ -1,0 +1,99 @@
+/* post */
+.PostCard {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	padding: 1rem 0;
+	border-bottom: 1px dotted #e3e3e3;
+	cursor: pointer;
+}
+.post_text {
+	width: 65%;
+}
+.post_text .__title {
+	font-size: 1.2rem;
+	line-height: 2rem;
+	color: #666;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.post_text .__info {
+	display: flex;
+	align-items: center;
+	font-size: 0.8rem;
+	gap: 1rem;
+}
+.post_text .__info .author {
+	color: dodgerblue;
+	font-weight: bold;
+	padding: 0.25rem 1rem 0.25rem 0;
+}
+.post_text .__info .author:hover {
+	color: rgb(1, 75, 148);
+	font-weight: bold;
+}
+
+.post_text .__info .date {
+	color: #999;
+	margin-left: 0.5rem;
+	font-size: 0.7rem;
+}
+.post_text .__dec {
+	padding-top: 1rem;
+	font-size: 0.8rem;
+	line-height: 1.25rem;
+	color: #000;
+	white-space: normal;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.post_img {
+	width: calc(35% - 1rem);
+	overflow: hidden;
+}
+.post_img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: all 0.2s ease-in-out;
+}
+.PostCard:hover img {
+	transform: scale(1.1);
+}
+
+/* 최신 등록 첫번째 아티클 디자인 */
+.PostCard:first-of-type {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: space-between;
+	padding: 1rem 0;
+	border-bottom: 1px dotted #e3e3e3;
+}
+.PostCard:first-of-type > * {
+	width: 100%;
+}
+
+.heart {
+	cursor: pointer;
+	transition: color 0.3s ease;
+}
+
+.heart.liked {
+	color: red;
+}
+
+@media screen and (max-width: 600px) {
+	.PostCard {
+		flex-direction: column-reverse;
+	}
+	.post_text {
+		width: 100%;
+	}
+	.post_img {
+		width: 100%;
+	}
+}

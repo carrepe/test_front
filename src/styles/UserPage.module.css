@@ -1,0 +1,15 @@
+.UserPage {
+	padding: 0 2rem;
+	line-height: 1.6;
+	text-align: center;
+}
+
+.UserPage form * {
+	display: block;
+	width: 100%;
+}
+
+.UserPage form {
+	width: 300px;
+	margin: auto;
+}

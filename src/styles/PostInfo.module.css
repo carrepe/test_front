@@ -1,0 +1,18 @@
+.info {
+	display: flex;
+	justify-content: space-between;
+	gap: 2rem;
+	padding: 1rem;
+	font-size: 0.7rem;
+}
+
+.author {
+	font-size: 0.75rem;
+	color: dodgerblue;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.author:hover {
+	color: rgb(1, 75, 148);
+}

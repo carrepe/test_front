@@ -1,0 +1,45 @@
+.CreatePost {
+	padding: 0 2rem;
+}
+.CreatePost h2 {
+	padding-bottom: 2rem;
+}
+.writecom {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+}
+
+.writecom > label {
+	width: 120px;
+}
+.writecom > input {
+	padding: 1rem;
+}
+.writecom > :not(label) {
+	width: calc(100% - 120px - 1rem);
+	box-sizing: border-box;
+}
+.writecom > textarea {
+	height: 300px;
+}
+
+.writecom > button {
+	padding: 1rem;
+	margin-left: calc(120px + 1rem);
+	width: 200px;
+}
+.writecom > p {
+	font-size: 0.75rem;
+	color: red;
+	text-align: right;
+	width: 100%;
+}
+.writecom .smallimg {
+	text-align: left;
+	padding-left: 130px;
+}
+.writecom .smallimg img {
+	width: 100px;
+}

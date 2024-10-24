@@ -1,0 +1,38 @@
+.commentSection form {
+	display: flex;
+	justify-content: space-between;
+}
+.commentSection textarea {
+	width: 80%;
+}
+
+.list {
+	list-style-type: none;
+	padding: 0.5rem 0;
+	border-bottom: 1px dotted #ccc;
+	display: flex;
+}
+
+.commnet {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.author {
+	font-size: 0.75rem;
+	color: dodgerblue;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.author:hover {
+	color: rgb(1, 75, 148);
+}
+.logMessage {
+	padding: 1rem 0.5rem;
+	border-radius: 1rem;
+	text-align: center;
+	background-color: #eaeaea;
+}

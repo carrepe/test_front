@@ -1,0 +1,10 @@
+.PostDetailPage .summary {
+	background-color: #eaeaea;
+	padding: 1rem;
+	border-radius: 1rem;
+	font-style: italic;
+}
+
+.PostDetailPage .desc {
+	padding: 1rem;
+}

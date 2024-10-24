@@ -1,0 +1,11 @@
+.btns {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin: 1rem;
+}
+.btns * {
+	background-color: #f1f1f1;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+}

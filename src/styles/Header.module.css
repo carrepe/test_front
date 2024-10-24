@@ -1,0 +1,40 @@
+/* header */
+.Header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	margin-bottom: 2rem;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Header .logo {
+	color: dodgerblue;
+	font-size: 1.2rem;
+}
+
+.Header .gnb a,
+.Header .gnb span {
+	padding: 0 0.5rem;
+	position: relative;
+	font-size: 0.8rem;
+	cursor: pointer;
+}
+.Header .gnb a::after,
+.Header .gnb span::after {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 50%;
+	background-color: #eee;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+
+.Header .gnb *:last-child::after {
+	display: none;
+}
+.Header .gnb *:hover {
+	color: #e68200;
+}

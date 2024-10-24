@@ -1,0 +1,16 @@
+.PostDetailPage {
+	padding: 0 2rem;
+}
+
+.PostDetailPage h3 {
+	padding: 1rem 2rem;
+	text-align: center;
+	font-weight: bold;
+	background-color: white;
+	position: relative;
+	z-index: 1;
+}
+
+.PostDetailPage .commentlist {
+	padding: 1rem;
+}
