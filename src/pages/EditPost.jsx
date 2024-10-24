@@ -102,7 +102,7 @@ export default function EditPost() {
 
 		try {
 			const result = await updatePost(postId, data);
-			if (result.message === "ok") {
+			if (result._id) {
 				navigate(`/detail/${postId}`);
 			}
 		} catch (error) {
