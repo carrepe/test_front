@@ -44,13 +44,13 @@ export default function UserPage() {
 		data: userData,
 		loading: userLoading,
 		error: userError,
-	} = useFetch(`${API_URL}/users/${userinfo}`);
+	} = useFetch(`${API_URL}users/${userinfo}`);
 
 	const {
 		data: postsData,
 		loading: postsLoading,
 		error: postsError,
-	} = useFetch(`${API_URL}/posts/user-posts/${userinfo}`);
+	} = useFetch(`${API_URL}posts/user-posts/${userinfo}`);
 
 	if (userLoading || postsLoading) return <div>Loading...</div>;
 	if (userError || postsError)

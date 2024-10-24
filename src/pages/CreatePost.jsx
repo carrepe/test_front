@@ -21,7 +21,7 @@ const useForm = (initialState) => {
 };
 
 const createPost = async (data) => {
-	const response = await fetch(`${API_URL}/posts/postWrite`, {
+	const response = await fetch(`${API_URL}posts/postWrite`, {
 		method: "POST",
 		body: data,
 		credentials: "include",

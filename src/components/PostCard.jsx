@@ -53,7 +53,7 @@ const AuthorLink = React.memo(function AuthorLink({ author }) {
 const PostImage = React.memo(function PostImage({ cover }) {
 	return (
 		<div className={style.post_img}>
-			<img src={`${API_URL}/${cover}`} alt="" />
+			<img src={`${API_URL}${cover}`} alt="" />
 		</div>
 	);
 });
@@ -80,7 +80,7 @@ export default function PostCard({ post }) {
 
 			try {
 				const response = await fetch(
-					`${API_URL}/posts/like/${post._id}`,
+					`${API_URL}posts/like/${post._id}`,
 					{
 						method: "POST",
 						credentials: "include",

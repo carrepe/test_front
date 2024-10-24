@@ -12,7 +12,7 @@ const useComments = (postId) => {
 
 	const fetchComments = useCallback(async () => {
 		try {
-			const response = await fetch(`${API_URL}/comments/${postId}`);
+			const response = await fetch(`${API_URL}comments/${postId}`);
 			const data = await response.json();
 			setComments(data);
 		} catch (error) {
@@ -48,7 +48,7 @@ const CommentForm = React.memo(function CommentForm({
 			return;
 		}
 		try {
-			const response = await fetch(`${API_URL}/comments`, {
+			const response = await fetch(`${API_URL}comments`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
@@ -93,7 +93,7 @@ const Comment = React.memo(function Comment({
 
 	const handleUpdate = async () => {
 		try {
-			const response = await fetch(`${API_URL}/comments/${comment._id}`, {
+			const response = await fetch(`${API_URL}comments/${comment._id}`, {
 				method: "PUT",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ content: editContent }),

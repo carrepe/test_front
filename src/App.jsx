@@ -16,12 +16,12 @@ export default function App() {
 				<Route index element={<MainPage />} />
 				<Route path="login" element={<LoginPage />} />
 				<Route path="register" element={<RegisterPage />} />
-				<Route path="/detail/:postId" element={<PostDetailPage />} />
+				<Route path="detail/:postId" element={<PostDetailPage />} />
 				<Route path="create" element={<CreatePost />} />
-				<Route path="/edit/:postId" element={<EditPost />} />
-				<Route path="/userpage/:userinfo" element={<UserPage />} />
+				<Route path="edit/:postId" element={<EditPost />} />
+				<Route path="userpage/:userinfo" element={<UserPage />} />
 				<Route
-					path="/updataUserInfo/:userinfo"
+					path="updataUserInfo/:userinfo"
 					element={<EditUserPage />}
 				/>
 			</Route>

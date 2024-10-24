@@ -16,7 +16,7 @@ const useAuth = () => {
 
 	const fetchProfile = useCallback(async () => {
 		try {
-			const response = await fetch(`${API_URL}/auth/profile`, {
+			const response = await fetch(`${API_URL}auth/profile`, {
 				credentials: "include",
 			});
 			if (response.ok) {
@@ -32,7 +32,7 @@ const useAuth = () => {
 
 	const logout = useCallback(async () => {
 		try {
-			await fetch(`${API_URL}/auth/logout`, {
+			await fetch(`${API_URL}auth/logout`, {
 				credentials: "include",
 				method: "POST",
 			});

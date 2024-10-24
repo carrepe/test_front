@@ -17,7 +17,7 @@ const useForm = (initialState) => {
 };
 
 const loginUser = async (username, password) => {
-	const response = await fetch(`${API_URL}/auth/login`, {
+	const response = await fetch(`${API_URL}auth/login`, {
 		method: "POST",
 		body: JSON.stringify({ username, password }),
 		headers: {
