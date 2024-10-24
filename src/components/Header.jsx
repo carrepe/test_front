@@ -69,6 +69,7 @@ export default function Header() {
 	const location = useLocation();
 
 	const username = useMemo(() => user?.username, [user]);
+	console.log("Header render", username);
 
 	useEffect(() => {
 		fetchProfile();
