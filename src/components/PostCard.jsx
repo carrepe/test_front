@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchNotifications } from "../store/notificationSlice";
 import style from "../styles/PostCard.module.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -59,6 +60,7 @@ const PostImage = React.memo(function PostImage({ cover }) {
 });
 
 export default function PostCard({ post }) {
+	const dispatch = useDispatch();
 	const user = useSelector((state) => state.user.user);
 	const [isLiked, setIsLiked] = useState(
 		user && post.likes?.includes(user.id)
@@ -91,6 +93,8 @@ export default function PostCard({ post }) {
 					const updatedPost = await response.json();
 					setIsLiked((prev) => !prev);
 					setLikeCount(updatedPost.likes.length);
+					// 좋아요 후 알림 상태 업데이트
+					dispatch(fetchNotifications(user.username));
 				} else {
 					console.error("Failed to update like");
 				}
@@ -98,7 +102,7 @@ export default function PostCard({ post }) {
 				console.error("Error updating like:", error);
 			}
 		},
-		[user, post._id]
+		[user, post._id, dispatch]
 	);
 
 	const formattedDate = useMemo(

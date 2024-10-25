@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { fetchNotifications } from "../store/notificationSlice";
 import style from "../styles/CommentSection.module.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -35,6 +36,7 @@ const CommentForm = React.memo(function CommentForm({
 	localUser,
 	onCommentAdded,
 }) {
+	const dispatch = useDispatch();
 	const [newComment, setNewComment] = useState("");
 
 	const handleSubmit = async (e) => {
@@ -61,6 +63,8 @@ const CommentForm = React.memo(function CommentForm({
 			if (response.ok) {
 				setNewComment("");
 				onCommentAdded();
+				// 댓글 작성 후 알림 상태 업데이트
+				dispatch(fetchNotifications(localUser));
 			} else {
 				alert("댓글 등록에 실패했습니다.");
 			}
