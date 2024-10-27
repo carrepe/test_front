@@ -1,77 +1,270 @@
-/* header */
 .Header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem;
-	margin-bottom: 2rem;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	border-bottom: 1px solid #eee;
 }
 
-.Header .logo {
-	color: dodgerblue;
-	font-size: 1.2rem;
+.gnb {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
 }
 
-.Header .gnb a,
-.Header .gnb span {
-	padding: 0 0.5rem;
-	position: relative;
-	font-size: 0.8rem;
+.gnb a,
+.gnb span {
+	text-decoration: none;
+	color: #333;
 	cursor: pointer;
 }
-.Header .gnb a::after,
-.Header .gnb span::after {
-	content: "";
+
+.notificationContainer {
+	position: relative;
+	display: inline-block;
+}
+
+.notificationIconWrapper {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+}
+
+.iconWrapper {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	margin-left: 0.5rem;
+	cursor: pointer;
+	transition: transform 0.2s;
+}
+
+.iconWrapper:hover {
+	transform: scale(1.1);
+}
+
+.notificationBadge,
+.chatBadge {
 	position: absolute;
-	width: 1px;
-	height: 50%;
-	background-color: #eee;
-	top: 50%;
-	right: 0;
-	transform: translateY(-50%);
-}
-
-.Header .gnb *:last-child::after {
-	display: none;
-}
-.Header .gnb > a:hover,
-.Header .gnb > span:hover {
-	color: #e68200;
-}
-
-/* styles/Header.module.css에 추가 */
-.notificationBadge {
-	background-color: red;
+	top: -8px;
+	right: -8px;
+	background-color: #ff4444;
 	color: white;
-	padding: 2px 6px;
 	border-radius: 50%;
+	padding: 2px 6px;
 	font-size: 12px;
-	margin-left: 5px;
+	min-width: 18px;
+	text-align: center;
+}
+
+.chatBadge {
+	background-color: #4444ff;
+	animation: pulse 2s infinite;
 }
 
 .notificationDropdown {
-	position: fixed;
-	bottom: 10px;
-	right: 10px;
+	position: absolute;
+	top: 100%;
+	right: 0;
 	background-color: white;
-	border: 1px solid #ddd;
+	border: 1px solid #eee;
 	border-radius: 4px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	min-width: 200px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	min-width: 250px;
 	z-index: 1000;
 }
 
-.notificationItem {
-	padding: 10px;
-	border-bottom: 1px solid #eee;
-	cursor: pointer;
+.notificationItem:last-child {
+	border-bottom: none;
 }
 
 .notificationItem:hover {
 	background-color: #f5f5f5;
 }
 
-.notificationItem:last-child {
-	border-bottom: none;
+.notificationItem span {
+	flex: 1;
+}
+
+.notificationItem span[role="img"] {
+	flex: none;
+}
+
+.timestamp {
+	font-size: 0.8em;
+	color: #666;
+	margin-left: auto;
+	white-space: nowrap;
+}
+
+.notificationItem {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem 1rem;
+	cursor: pointer;
+	border-bottom: 1px solid #eee;
+}
+
+.notificationItem span:not(.timestamp) {
+	flex: 1;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* ChatListModal 스타일 */
+.chatListModal {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	width: 300px;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.modalHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 16px;
+	border-bottom: 1px solid #eee;
+	position: sticky;
+	top: 0;
+	background-color: white;
+	z-index: 1;
+}
+
+.modalHeader h3 {
+	margin: 0;
+	font-size: 1rem;
+	color: #333;
+}
+
+.modalHeader button {
+	padding: 6px 12px;
+	background-color: #f0f0f0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 0.875rem;
+	color: #666;
+}
+
+.modalHeader button:hover {
+	background-color: #e0e0e0;
+}
+
+.modalChatList {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.modalChatItem {
+	padding: 12px 16px;
+	border-bottom: 1px solid #eee;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.modalChatItem:hover {
+	background-color: #f8f8f8;
+}
+
+.chatItemHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 4px;
+}
+
+.chatPartner {
+	font-weight: bold;
+	color: #333;
+	font-size: 0.9rem;
+}
+
+.lastMessageDate {
+	font-size: 0.75rem;
+	color: #888;
+}
+
+.lastMessage {
+	color: #666;
+	font-size: 0.875rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 250px;
+}
+
+.noChatMessage {
+	padding: 24px 16px;
+	text-align: center;
+	color: #888;
+	font-size: 0.9rem;
+}
+
+/* 스크롤바 스타일링 */
+.chatListModal::-webkit-scrollbar {
+	width: 6px;
+}
+
+.chatListModal::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 3px;
+}
+
+.chatListModal::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 3px;
+}
+
+.chatListModal::-webkit-scrollbar-thumb:hover {
+	background: #aaa;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+	.chatListModal {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%;
+		max-width: 300px;
+		max-height: 80vh;
+	}
+
+	.modalHeader {
+		padding: 16px;
+	}
+
+	.modalHeader h3 {
+		font-size: 1.1rem;
+	}
+
+	.modalChatItem {
+		padding: 16px;
+	}
+
+	.lastMessage {
+		max-width: 100%;
+	}
 }

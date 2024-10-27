@@ -52,8 +52,10 @@
 	text-overflow: ellipsis;
 }
 .post_img {
+	background-color: #eaeaea;
 	width: calc(35% - 1rem);
 	overflow: hidden;
+	border-radius: 10px;
 }
 .post_img img {
 	width: 100%;

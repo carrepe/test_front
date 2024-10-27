@@ -13,3 +13,22 @@
 	width: 300px;
 	margin: auto;
 }
+
+.notificationContainer {
+	margin: 2rem 0;
+}
+.chatList > li,
+.notificationList > li {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0;
+	border-bottom: 1px dotted #ccc;
+	cursor: pointer;
+}
+.chatList > li:hover,
+.notificationList > li:hover {
+	background-color: #f8f8f8;
+}
+.notificationList {
+}

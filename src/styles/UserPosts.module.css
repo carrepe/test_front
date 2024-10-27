@@ -8,6 +8,9 @@
 	width: 100px;
 	height: 100px;
 	object-fit: cover;
+	background-color: #f1f1f1;
+	overflow: hidden;
+	border-radius: 10px;
 }
 img {
 	width: 100%;

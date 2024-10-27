@@ -5,6 +5,7 @@
 	border-radius: 50%;
 	overflow: hidden;
 	border: 5px solid #f1f1f1;
+	background-color: #f1f1f1;
 }
 .userimg img {
 	width: 100%;

@@ -1,22 +1,33 @@
-.commentSection form {
+.CommentSection form {
 	display: flex;
 	justify-content: space-between;
-}
-.commentSection textarea {
-	width: 80%;
+	margin-bottom: 1rem;
 }
 
-.list {
+.CommentSection textarea {
+	width: 80%;
+	padding: 0.5rem;
+	resize: vertical;
+	min-height: 60px;
+}
+
+.commentList {
+	margin-top: 1rem;
+}
+
+.comment {
 	list-style-type: none;
 	padding: 0.5rem 0;
 	border-bottom: 1px dotted #ccc;
 	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
 }
 
-.commnet {
-	width: 100%;
+.commentHeader {
 	display: flex;
-	justify-content: space-between;
+	gap: 1rem;
 	align-items: center;
 }
 
@@ -30,9 +41,68 @@
 .author:hover {
 	color: rgb(1, 75, 148);
 }
-.logMessage {
+
+.date {
+	font-size: 0.75rem;
+	color: #666;
+}
+
+.content {
+	margin: 0.5rem 0;
+	word-break: break-all;
+}
+
+.deleteButton {
+	padding: 0.25rem 0.5rem;
+	background-color: #ff4444;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 0.75rem;
+}
+
+.deleteButton:hover {
+	background-color: #cc0000;
+}
+
+.noComments {
 	padding: 1rem 0.5rem;
 	border-radius: 1rem;
 	text-align: center;
 	background-color: #eaeaea;
+	margin: 1rem 0;
+}
+
+.commentForm {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.commentForm textarea {
+	flex: 1;
+	padding: 0.5rem;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	resize: vertical;
+	min-height: 60px;
+}
+
+.commentForm button {
+	padding: 0.5rem 1rem;
+	background-color: dodgerblue;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.commentForm button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+.commentForm button:hover:not(:disabled) {
+	background-color: rgb(1, 75, 148);
 }
