@@ -8,6 +8,7 @@ import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
 import UserPage from "./pages/UserPage";
 import EditUserPage from "./pages/EditUserPage";
+import Auth from "./services/Auth";
 
 export default function App() {
 	return (
@@ -20,6 +21,7 @@ export default function App() {
 				<Route path="create" element={<CreatePost />} />
 				<Route path="edit/:postId" element={<EditPost />} />
 				<Route path="userpage/:userinfo" element={<UserPage />} />
+				<Route path="/auth/kakao" element={<Auth />} />
 				<Route
 					path="updataUserInfo/:userinfo"
 					element={<EditUserPage />}

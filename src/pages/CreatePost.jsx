@@ -6,7 +6,7 @@ import ToastEditor from "../components/ToastEditor";
 const API_URL = import.meta.env.VITE_API_URL;
 
 // 커스텀 훅으로 분리하여 재사용해보세요
-const useForm = (initialState) => {
+const usePostForm = (initialState) => {
 	const [values, setValues] = useState(initialState);
 
 	const handleChange = useCallback((e) => {
@@ -36,7 +36,7 @@ const createPost = async (data) => {
 
 export default function CreatePost() {
 	const [{ title, summary, files, content }, handleChange, setFormValues] =
-		useForm({
+		usePostForm({
 			title: "",
 			summary: "",
 			files: "",

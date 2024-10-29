@@ -41,3 +41,24 @@
 		width: 100%;
 	}
 }
+
+.LoginContainer {
+	display: flex;
+	justify-content: center;
+	padding-top: 1rem;
+}
+
+.kakaoLogin {
+	background-color: #fee500;
+	color: #000;
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	padding: 1rem;
+	transition: all 0.3s ease;
+}
+
+.LoginContainer button:hover {
+	opacity: 0.8;
+	transform: translateY(-3px);
+}
